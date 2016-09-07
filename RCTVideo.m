@@ -177,6 +177,7 @@ static NSString *const playbackRate = @"rate";
         [_eventDispatcher sendInputEventWithName:@"onVideoProgress"
                                             body:@{
                                                      @"currentTime": [NSNumber numberWithFloat:CMTimeGetSeconds(currentTime)],
+                                                     @"duration": [NSNumber numberWithFloat:CMTimeGetSeconds(playerDuration)],
                                                      @"playableDuration": [self calculatePlayableDuration],
                                                      @"atValue": [NSNumber numberWithLongLong:currentTime.value],
                                                      @"atTimescale": [NSNumber numberWithInt:currentTime.timescale],
